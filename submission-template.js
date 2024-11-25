@@ -52,9 +52,9 @@ const isPalindrome = function(str) {
   return Boolean(str.toLowerCase() === reversed);
 };
 
-const word = 'canal';
-const palindrome = isPalindrome(word);
-console.log(palindrome);
+// const word = 'canal';
+// const palindrome = isPalindrome(word);
+// console.log(palindrome);
 
 const largestPair = function(array) {
   let largestProduct = 0;
