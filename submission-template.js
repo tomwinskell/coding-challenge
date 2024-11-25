@@ -5,6 +5,10 @@ const findSum = function(array) {
   }, 0)
 };
 
+// const numberArray = [10, 234, 356, 5, 3, 1, 3, 4];
+// const sum = findSum(numberArray);
+// console.log(sum);
+
 const findFrequency = function(array) {
   // count frequency of each element in array
   const count = array.reduce((acc, current) => {
@@ -39,10 +43,18 @@ const findFrequency = function(array) {
   return { most: greatest.element, least: least.element };
 };
 
+// const array = ['a', 'banana', 'a', 'd', 'd', 'd', 'd', 'b', 'b', 'c', 'c']
+// const result = findFrequency(array);
+// console.log(result);
+
 const isPalindrome = function(str) {
   const reversed = str.toLowerCase().split('').reverse().join('');
   return Boolean(str.toLowerCase() === reversed);
 };
+
+const word = 'canal';
+const palindrome = isPalindrome(word);
+console.log(palindrome);
 
 const largestPair = function(array) {
   let largestProduct = 0;
@@ -55,9 +67,22 @@ const largestPair = function(array) {
   return largestProduct;
 };
 
+// const pairs = [234, 32, 15, 344, 15, 34, 134, 2];
+// const sumOfLargestPairs = largestPair(pairs);
+// console.log(sumOfLargestPairs);
+
 const removeParenth = function(str) {
-  return str.replaceAll('(', '').replaceAll(')','');
+  const chars = str.split('');
+  const iOfP1 = chars.indexOf('(');
+  const iOfP2 = chars.indexOf(')');
+  const diff = iOfP2 - iOfP1;
+  chars.splice(iOfP1, diff + 1);
+  return chars.join('');
 };
+
+// const withPs =  'idonotwant(tobea)developer';
+// const withoutPs = removeParenth(withPs);
+// console.log(withoutPs);
 
 const scoreScrabble = function(str) {
   const scores = {
@@ -79,3 +104,7 @@ const scoreScrabble = function(str) {
   }
   return score;
 };
+
+// const myWord = 'quintessential';
+// const total = scoreScrabble(myWord);
+// console.log(total);
